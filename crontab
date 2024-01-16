@@ -1,0 +1,3 @@
+* * * * * root echo "Hello world" >> /var/log/cron.log 2>&1
+* * * * * root echo "select * from tt_log;" | /usr/bin/mariadb --user=$MYSQL_USER --password=$MYSQL_PASSWORD --host=anuko_db --port=3306 timetracker > /output.txt && php /data-sync.php >> /var/log/cron.log 2>&1 && echo "Pushed to Google Sheets" >> /var/log/cron.log 2>&1
+# Don't remove the empty line at the end of this file. It is required to run the cron job

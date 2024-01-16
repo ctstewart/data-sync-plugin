@@ -1,0 +1,17 @@
+version: '3'
+services:
+    data-sync-plugin:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            SPREADSHEET_ID: ${SPREADSHEET_ID}
+            SPREADSHEET_RANGE: ${SPREADSHEET_RANGE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        networks:
+            - anuko_timetracker_default
+
+networks:
+    anuko_timetracker_default:
+        external: true
