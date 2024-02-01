@@ -14,4 +14,5 @@ left join tt_projects
 on tt_log.project_id = tt_projects.id
 left join tt_tasks
 on tt_log.task_id = tt_tasks.id
+where tt_log.status is not null
 order by tt_log.date, tt_log.start;
